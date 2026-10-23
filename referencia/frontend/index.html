@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mis tareas</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main>
+    <h1>Mis tareas</h1>
+    <p id="mensaje" role="status"></p>
+
+    <section id="acceso">
+      <form id="form-entrar">
+        <h2>Entrar</h2>
+        <input name="email" type="email" placeholder="Correo" required autocomplete="email">
+        <input name="clave" type="password" placeholder="Contraseña" required autocomplete="current-password">
+        <button>Entrar</button>
+      </form>
+
+      <form id="form-registro">
+        <h2>Crear cuenta</h2>
+        <input name="email" type="email" placeholder="Correo" required autocomplete="email">
+        <input name="clave" type="password" placeholder="Contraseña (mín. 8, mayúscula, número y símbolo)" required minlength="8" autocomplete="new-password">
+        <button>Registrarme</button>
+      </form>
+
+      <form id="form-confirmar" hidden>
+        <h2>Confirmar correo</h2>
+        <p>Le enviamos un código a <strong id="email-confirmar"></strong>.</p>
+        <input name="codigo" placeholder="Código" required inputmode="numeric" autocomplete="one-time-code">
+        <button>Confirmar</button>
+      </form>
+    </section>
+
+    <section id="tareas" hidden>
+      <form id="form-nueva">
+        <input name="titulo" placeholder="Nueva tarea" required maxlength="200">
+        <button>Agregar</button>
+      </form>
+      <ul id="lista"></ul>
+      <button id="salir" class="secundario">Salir</button>
+    </section>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
